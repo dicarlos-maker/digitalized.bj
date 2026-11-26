@@ -152,7 +152,7 @@
       font: 14px var(--serif);
     }
 
-    .menu-section {
+    .services-section {
       padding: 76px 24px 88px;
       background: #f1efe8;
     }
@@ -182,29 +182,29 @@
     }
     .filter:hover, .filter.active { border-color: var(--green); color: white; background: var(--green); }
 
-    .menu-grid {
+    .services-grid {
       max-width: 1080px;
       margin: auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 19px;
     }
-    .dish-card {
+    .service-card {
       overflow: hidden;
       background: var(--paper);
       transition: transform .25s, box-shadow .25s;
     }
-    .dish-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px #33311a12; }
-    .dish-card[hidden] { display: none; }
-    .dish-image { position: relative; height: 195px; overflow: hidden; background: #ddd8c9; }
-    .dish-image img {
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px #33311a12; }
+    .service-card[hidden] { display: none; }
+    .service-image { position: relative; height: 195px; overflow: hidden; background: #ddd8c9; }
+    .service-image img {
       width: 100%;
       height: 100%;
       display: block;
       object-fit: cover;
       transition: transform .45s;
     }
-    .dish-card:hover .dish-image img { transform: scale(1.04); }
+    .service-card:hover .service-image img { transform: scale(1.04); }
     .badge {
       position: absolute;
       top: 13px;
@@ -216,18 +216,18 @@
       letter-spacing: .06em;
       text-transform: uppercase;
     }
-    .dish-info { padding: 17px 19px 19px; }
-    .dish-title {
+    .service-info { padding: 17px 19px 19px; }
+    .service-title {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
       gap: 12px;
     }
-    .dish-title h3 { margin: 0; font: 500 18px var(--serif); }
+    .service-title h3 { margin: 0; font: 500 18px var(--serif); }
     .price { color: var(--orange); font: 16px var(--serif); white-space: nowrap; }
-    .dish-info p { margin: 8px 0 0; color: var(--muted); font-size: 10px; line-height: 1.7; }
+    .service-info p { margin: 8px 0 0; color: var(--muted); font-size: 10px; line-height: 1.7; }
     .dietary { margin-top: 12px; color: #858779; font-size: 9px; letter-spacing: .05em; }
-    .order-link {
+    .service-link {
       display: inline-block;
       margin-top: 14px;
       color: var(--green);
@@ -236,7 +236,7 @@
       border-bottom: 1px solid #aeb3a7;
       padding-bottom: 4px;
     }
-    .order-link:hover { color: var(--orange); border-color: var(--orange); }
+    .service-link:hover { color: var(--orange); border-color: var(--orange); }
     .callout {
       max-width: 1080px;
       min-height: 202px;
@@ -279,19 +279,19 @@
       .hero { min-height: auto; padding: 35px 22px 48px; grid-template-columns: 1fr; gap: 28px; }
       .hero-photo { height: 310px; }
       .photo-note { right: -8px; }
-      .menu-section { padding: 62px 20px 68px; }
-      .menu-grid { grid-template-columns: repeat(2, 1fr); gap: 13px; }
-      .dish-image { height: 170px; }
-      .dish-info { padding: 14px; }
-      .dish-title h3 { font-size: 16px; }
+      .services-section { padding: 62px 20px 68px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); gap: 13px; }
+      .service-image { height: 170px; }
+      .service-info { padding: 14px; }
+      .service-title h3 { font-size: 16px; }
       .callout { padding: 30px 25px; }
       footer { padding: 24px 22px; }
     }
     @media (max-width: 480px) {
       .topline { font-size: 9px; }
       .hero-photo { height: 255px; }
-      .menu-grid { grid-template-columns: 1fr; gap: 15px; }
-      .dish-image { height: 205px; }
+      .services-grid { grid-template-columns: 1fr; gap: 15px; }
+      .service-image { height: 205px; }
       .filters { gap: 6px; }
       .filter { padding: 9px 12px; }
       .callout { align-items: flex-start; flex-direction: column; }
@@ -331,7 +331,7 @@
       </div>
     </section>
 
-    <section class="menu-section" id="services">
+    <section class="services-section" id="services">
       <div class="section-heading">
         <div class="eyebrow">What we do</div>
         <h2>Everything your customers need to find you</h2>
@@ -340,79 +340,55 @@
 
       <div class="filters" role="group" aria-label="Filter services by business type">
         <button class="filter active" type="button" data-filter="all" aria-pressed="true">All services</button>
-        <button class="filter" type="button" data-filter="restaurants" aria-pressed="false">Restaurants</button>
         <button class="filter" type="button" data-filter="salons" aria-pressed="false">Salons & beauty</button>
         <button class="filter" type="button" data-filter="professionals" aria-pressed="false">Local professionals</button>
       </div>
 
-      <div class="menu-grid" id="examples" aria-live="polite">
-        <article class="dish-card" data-category="restaurants">
-          <div class="dish-image">
-            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="A welcoming restaurant dining area" loading="lazy">
-            <span class="badge">Restaurant page</span>
-          </div>
-          <div class="dish-info">
-            <div class="dish-title"><h3>Digital menu</h3></div>
-            <p>Show dishes, daily specials, opening hours, and prices in one easy-to-share page.</p>
-            <div class="dietary">MENU&nbsp; · &nbsp;ORDERS&nbsp; · &nbsp;LOCATION</div>
-            <a class="order-link" href="#contact">Build this page&nbsp; +</a>
-          </div>
-        </article>
-        <article class="dish-card" data-category="salons">
-          <div class="dish-image">
+      <div class="services-grid" id="examples" aria-live="polite">
+        <article class="service-card" data-category="salons">
+          <div class="service-image">
             <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80" alt="A modern hair salon interior" loading="lazy">
           </div>
-          <div class="dish-info">
-            <div class="dish-title"><h3>Salon catalogue</h3></div>
+          <div class="service-info">
+            <div class="service-title"><h3>Salon catalogue</h3></div>
             <p>Present treatments, before-and-after work, prices, availability, and booking details.</p>
             <div class="dietary">SERVICES&nbsp; · &nbsp;PRICES&nbsp; · &nbsp;BOOKING</div>
-            <a class="order-link" href="#contact">Build this page&nbsp; +</a>
+            <a class="service-link" href="#contact">Build this page&nbsp; +</a>
           </div>
         </article>
-        <article class="dish-card" data-category="professionals">
-          <div class="dish-image">
+        <article class="service-card" data-category="professionals">
+          <div class="service-image">
             <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80" alt="A professional workspace" loading="lazy">
             <span class="badge">Professional page</span>
           </div>
-          <div class="dish-info">
-            <div class="dish-title"><h3>Service portfolio</h3></div>
+          <div class="service-info">
+            <div class="service-title"><h3>Service portfolio</h3></div>
             <p>Help clients understand what you do, see your work, and contact you in one click.</p>
             <div class="dietary">PORTFOLIO&nbsp; · &nbsp;SERVICES&nbsp; · &nbsp;CONTACT</div>
-            <a class="order-link" href="#contact">Build this page&nbsp; +</a>
+            <a class="service-link" href="#contact">Build this page&nbsp; +</a>
           </div>
         </article>
-        <article class="dish-card" data-category="restaurants">
-          <div class="dish-image">
-            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80" alt="A lively restaurant ready for customers" loading="lazy">
-          </div>
-          <div class="dish-info">
-            <div class="dish-title"><h3>WhatsApp ordering</h3></div>
-            <p>Let customers browse, build an order, and send it directly to your WhatsApp.</p>
-            <div class="dietary">SHAREABLE&nbsp; · &nbsp;FAST&nbsp; · &nbsp;MOBILE</div>
-            <a class="order-link" href="#contact">Build this page&nbsp; +</a>
-          </div>
-        </article>
-        <article class="dish-card" data-category="salons">
-          <div class="dish-image">
+        <article class="service-card" data-category="salons">
+          <div class="service-image">
             <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=80" alt="Beauty products and salon services" loading="lazy">
           </div>
-          <div class="dish-info">
-            <div class="dish-title"><h3>Beauty shop profile</h3></div>
+          <div class="service-info">
+            <div class="service-title"><h3>Beauty shop profile</h3></div>
             <p>Turn social followers into customers with services, promotions, reviews, and contact actions.</p>
             <div class="dietary">PROFILE&nbsp; · &nbsp;PROMOS&nbsp; · &nbsp;REVIEWS</div>
-            <a class="order-link" href="#contact">Build this page&nbsp; +</a>
+            <a class="service-link" href="#contact">Build this page&nbsp; +</a>
           </div>
         </article>
-        <article class="dish-card" data-category="professionals">
-          <div class="dish-image">
+        <article class="service-card" data-category="professionals">
+          <div class="service-image">
             <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80" alt="A small team collaborating" loading="lazy">
             <span class="badge">Business toolkit</span>
           </div>
-          <div class="dish-info">
-            <div class="dish-title"><h3>Complete launch kit</h3></div>
+          <div class="service-info">
+            <div class="service-title"><h3>Complete launch kit</h3></div>
             <p>Get a branded page, QR code, WhatsApp link, social profile, and simple analytics.</p>
             <div class="dietary">PAGE&nbsp; · &nbsp;QR&nbsp; · &nbsp;LINKS&nbsp; · &nbsp;INSIGHTS</div>
-            <a class="order-link" href="#contact">Build this page&nbsp; +</a>
+            <a class="service-link" href="#contact">Build this page&nbsp; +</a>
           </div>
         </article>
       </div>
@@ -435,7 +411,7 @@
 
   <script>
     const filterButtons = document.querySelectorAll(".filter");
-    const dishes = document.querySelectorAll(".dish-card");
+    const services = document.querySelectorAll(".service-card");
     filterButtons.forEach((button) => {
       button.addEventListener("click", () => {
         const category = button.dataset.filter;
@@ -444,8 +420,8 @@
           item.classList.toggle("active", selected);
           item.setAttribute("aria-pressed", String(selected));
         });
-        dishes.forEach((dish) => {
-          dish.hidden = category !== "all" && dish.dataset.category !== category;
+        services.forEach((service) => {
+          service.hidden = category !== "all" && service.dataset.category !== category;
         });
       });
     });
